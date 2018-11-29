@@ -7,9 +7,11 @@ function setup() {
   background(205);
   textAlign(CENTER, CENTER);
 
-  button = createButton('Next');
-  button.position(1270, 600);
+  button = createButton('Start Quiz!');
+  button.position(600, 500);
   button.mousePressed(nextPage);
+  button.size(200,100);
+  button.style('font-size', '30px');
 }
 
 
@@ -21,8 +23,6 @@ textSize(80);
 text("Personality Quiz:", 700, 150);
 textSize(40);
 text("What type of student are you?", 700, 280);
-text("[Do something cool with images/animation/effects here...]", 700, 440);
-text("Start Quiz!",700, 600);
 }
 
 function nextPage() {

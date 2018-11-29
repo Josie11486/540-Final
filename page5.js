@@ -1,4 +1,5 @@
 var button;
+var choice = 'C';
 var x = 300;
 var y = 300;
 
@@ -6,7 +7,6 @@ function setup() {
   createCanvas(1400, 700);
   background(205);
   textAlign(CENTER, CENTER);
-
   button = createButton('Next');
   button.position(1270, 600);
   button.mousePressed(nextPage);
@@ -16,18 +16,44 @@ function setup() {
 function draw() {
   rect(50, 50, 1300, 600);
 
-  // Title, instructions, answers, activity space
+  push()
+    fill(244, 65, 65);
+    ellipse(307, 300, 30, 30);
+    fill(66, 134, 244);
+    ellipse(307, 350, 30, 30);
+  pop();
+
 textAlign(CENTER, CENTER);
 textSize(40);
 text("What type of student are you?", 700, 100);
 textSize(20);
-text("There is a big midterm project that is due on Wednesday, it is Tuesday afternoon and the gang is going out to celebrate your bestie’s birthday! What do you do?", 700, 180);
+text("There is a big midterm project due tomorrow, but the gang is going out to celebrate your bestie’s birthday tonight! What do you do?", 700, 180);
 textAlign(LEFT, LEFT);
-text("A. Tell your friends, that you unfortunately have to miss it, cash app her money for a shot and promise to celebrate this weekend.", x, y);
-text("B. Attend the 4pm dinner party and 7pm movie, pull an allnighter and wake up early in the morning to finish the loose ends", x, y+50);
+text("A. Tell your friends that you have to miss the party and promise to celebrate this weekend.", x, y);
+text("B. Attend the party, pull an all-nighter and wake up early in the morning to finish the loose ends.", x, y+50);
 
+
+
+if(mouseIsPressed) {
+  if(mouseX>=292 && mouseX<=322 && mouseY>=285 && mouseY<=315) {
+      background(244, 65, 65);
+      choice = 'A';
+  } else if(mouseX>=292 && mouseX<=322 && mouseY>=335 && mouseY<=365) {
+      background(66, 134, 244);
+      choice = 'B';
+  }
+}
 }
 
 function nextPage() {
+  saveCookie();
   window.location = 'page6.html';
+}
+
+//https://www.w3schools.com/js/js_cookies.asp
+function saveCookie() {
+  var d = new Date();
+  d.setTime(d.getTime() + 60*60*1000);
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = "index_page=" + choice + ";" + expires + ";path=/";
 }
