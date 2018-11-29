@@ -20,11 +20,9 @@ function draw() {
 textSize(40);
 text("What type of student are you?", 700, 100);
 textSize(20);
-text("Type question 3 here...", 700, 180);
-text("A. Type answer here...", x, y);
-text("B. Type answer here...", x, y+50);
-text("C. Type answer here...", x, y+100);
-text("D. Type answer here...", x, y+150);
+text("How often do you go to the library and use its services?", 700, 180);
+text("A. Less than twice a week", x, y);
+text("B. More than twice a week", x, y+50);
 }
 
 function nextPage() {
