@@ -1,3 +1,4 @@
+var button;
 var x = 540;
 var y = 300;
 
@@ -5,6 +6,10 @@ function setup() {
   createCanvas(1400, 700);
   background(205);
   textAlign(CENTER, CENTER);
+
+  button = createButton('Next');
+  button.position(1270, 600);
+  button.mousePressed(nextPage);
 }
 
 
@@ -20,5 +25,8 @@ text("A. Type answer here...", x, y);
 text("B. Type answer here...", x, y+50);
 text("C. Type answer here...", x, y+100);
 text("D. Type answer here...", x, y+150);
-text("Next", 1270, 600);
+}
+
+function nextPage() {
+  window.location = 'page2.html';
 }
