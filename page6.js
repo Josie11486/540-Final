@@ -1,44 +1,53 @@
 var button;
-var choice = 'C';
+var choice = '0';
 var x = 300;
 var y = 300;
+var arrow;
+
+function preload() {
+  arrow = loadImage('arrow.png');
+}
 
 function setup() {
   createCanvas(1400, 700);
-  background(205);
+  background(255);
   textAlign(CENTER, CENTER);
   button = createButton('Next');
-  button.position(1270, 600);
+  button.position(650, 600);
   button.mousePressed(nextPage);
+  button.size(100,50);
+  button.style('font-size', '20px');
 }
 
 
 function draw() {
-  rect(50, 50, 1300, 600);
-
   push()
-    fill(244, 65, 65);
-    ellipse(307, 300, 30, 30);
-    fill(66, 134, 244);
-    ellipse(307, 350, 30, 30);
+  noStroke();
+  rect(0, 0, width, height);
   pop();
 
-textAlign(CENTER, CENTER);
-textSize(40);
-text("What type of student are you?", 700, 100);
-textSize(20);
-text("Type question 6 here...", 700, 180);
-textAlign(LEFT, LEFT);
-text("A. Type answer here...", x, y);
-text("B. Type answer here...", x, y+50);
+
+    ellipse(307, 300, 30, 30);
+    ellipse(307, 350, 30, 30);
+
+  textAlign(CENTER, CENTER);
+  textSize(40);
+  text("What type of student are you?", 700, 40);
+  textAlign(LEFT, LEFT);
+  textSize(25);
+  text("6. Question", x, y-100);
+  textSize(20);
+  text("A.  Answer", x, y);
+  text("B.  Answer", x, y+50);
 
 if(mouseIsPressed) {
   if(mouseX>=292 && mouseX<=322 && mouseY>=285 && mouseY<=315) {
-      background(244, 65, 65);
-      choice = 'A';
+    choice = '1';
+    image(arrow, 230, 275);
+
   } else if(mouseX>=292 && mouseX<=322 && mouseY>=335 && mouseY<=365) {
-      background(66, 134, 244);
-      choice = 'B';
+      choice = '2';
+      image(arrow, 230, 325);
   }
 }
 }
@@ -53,5 +62,5 @@ function saveCookie() {
   var d = new Date();
   d.setTime(d.getTime() + 60*60*1000);
   var expires = "expires=" + d.toUTCString();
-  document.cookie = "index_page=" + choice + ";" + expires + ";path=/";
+  document.cookie = "index_page6=" + choice + ";" + expires + ";path=/";
 }
