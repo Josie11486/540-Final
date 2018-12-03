@@ -38,7 +38,8 @@ function draw() {
   image(capture, 0, 0, 320, 240);
   filter('INVERT');
   
-   ellipse(707, 700, 30, 30);
+   push() 
+  ellipse(707, 700, 30, 30);
     ellipse(707, 750, 30, 30);
 
   textAlign(CENTER, CENTER);
@@ -50,6 +51,7 @@ function draw() {
   textSize(20);
   text("A.  Answer", x, y);
   text("B.  Answer", x, y+50);
+   pop();
   
   stroke(255);
   y += speed;
