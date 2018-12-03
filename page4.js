@@ -6,7 +6,7 @@ var arrow;
 var capture;
 var x = 100;
 var y = 0;
-var speed = 5;
+var speed = -5;
 
 function preload() {
   arrow = loadImage('arrow.png');
