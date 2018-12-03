@@ -6,7 +6,7 @@ var arrow;
 var capture;
 var x = 100;
 var y = 0;
-var speed = 5;
+var speed = 2;
 
 function preload() {
   arrow = loadImage('arrow.png');
@@ -40,10 +40,10 @@ function draw() {
   
   stroke(255);
   y += speed;
-  line(x,y,x,y+20);
-  line(2*x, y-30, 2*x, y+20-30);
-  line(3*x, y+50, 3*x, y+20+50);
-  line(4*x, y-10, 4*x, y+20-10);
+  ellipse(x,y,x,y+20);
+  ellipse(2*x, y-30, 2*x, y+20-30);
+  ellipse(3*x, y+50, 3*x, y+20+50);
+  ellipse(4*x, y-10, 4*x, y+20-10);
   x= random(0, width);
 
   if(y > height) {
