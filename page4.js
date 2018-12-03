@@ -34,6 +34,9 @@ function draw() {
   rect(0, 0, width, height);
   pop();
 
+    ellipse(307, 300, 30, 30);
+  ellipse(307, 350, 30, 30);
+  
   textAlign(CENTER, CENTER);
   textSize(40);
   text("What kind of a student are you?", 700, 40);
