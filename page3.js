@@ -34,10 +34,10 @@ function draw() {
   text("What type of student are you?", 700, 40);
   textAlign(LEFT, LEFT);
   textSize(25);
-  text("3.There is a big midterm project that is due on Wednesday, it is Tuesday afternoon and the gang is going out to celebrate your bestie’s birthday! What do you do?", x, y-100);
+  text("3.Two important assignments are due tonight, what do you do? ", x, y-100);
   textSize(20);
-  text("A.  Tell your friends, that you unfortunately have to miss it, cash app her money for a shot and promise to celebrate this weekend", x, y);
-  text("B.  Attend the 4pm dinner party and 7pm movie, pull an allnighter and wake up early in the morning to finish the loose ends", x, y+50);
+  text("A.  Finish one then start the other", x, y);
+  text("B.  Swap between the two, as the ideas flow, you like to be on your toes", x, y+50);
 
 
 if(mouseIsPressed) {
