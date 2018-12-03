@@ -3,8 +3,6 @@ var choice = '0';
 var x = 300;
 var y = 300;
 var arrow;
-var capture;
-var x = 100;
 var y = 0;
 var speed = -5;
 
@@ -22,9 +20,6 @@ function setup() {
   button.size(100,50);
   button.style('font-size', '20px');
   
-  capture = createCapture(VIDEO);
-  capture.size(420, 340);
-  //capture.hide();
 }
 
 
@@ -33,11 +28,7 @@ function draw() {
   noStroke();
   rect(0, 0, width, height);
   pop();
-
-  background(255);
-  image(capture, 0, 0, 320, 240);
-  filter('INVERT');
-  
+ 
   
   stroke(255);
   y += speed;
