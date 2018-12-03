@@ -34,20 +34,7 @@ function draw() {
   rect(0, 0, width, height);
   pop();
 
-    ellipse(307, 300, 30, 30);
-  ellipse(307, 350, 30, 30);
-  
-  textAlign(CENTER, CENTER);
-  textSize(40);
-  text("What kind of a student are you?", 700, 40);
-  textAlign(LEFT, LEFT);
-  textSize(25);
-  text("3. How many circles are repeatedly showing on each line?, x, y-100);
-  textSize(20);
-  text("A.  4", x, y);
-  text("B.  6", x, y+50);
-
-     background(255);
+  background(255);
   image(capture, 0, 0, 320, 240);
   filter('INVERT');
   
