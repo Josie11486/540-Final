@@ -3,6 +3,7 @@ var choice = '0';
 var x = 300;
 var y = 300;
 var arrow;
+var capture;
 
 function preload() {
   arrow = loadImage('arrow.png');
@@ -17,6 +18,10 @@ function setup() {
   button.mousePressed(nextPage);
   button.size(100,50);
   button.style('font-size', '20px');
+  
+  capture = createCapture(VIDEO);
+  capture.size(320, 240);
+  //capture.hide();
 }
 
 
@@ -26,19 +31,9 @@ function draw() {
   rect(0, 0, width, height);
   pop();
 
-    ellipse(307, 300, 30, 30);
-    ellipse(307, 350, 30, 30);
-
-  textAlign(CENTER, CENTER);
-  textSize(40);
-  text("What type of student are you?", 700, 40);
-  textAlign(LEFT, LEFT);
-  textSize(25);
-  text("4. Question", x, y-100);
-  textSize(20);
-  text("A.  Answer", x, y);
-  text("B.  Answer", x, y+50);
-
+     background(255);
+  image(capture, 0, 0, 320, 240);
+  filter('INVERT');
 
 if(mouseIsPressed) {
   if(mouseX>=292 && mouseX<=322 && mouseY>=285 && mouseY<=315) {
