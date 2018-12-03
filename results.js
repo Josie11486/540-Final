@@ -1,7 +1,7 @@
 var button;
 var x = 540;
 var y = 300;
-
+var total;
 
 function setup() {
   createCanvas(1400, 700);
@@ -14,8 +14,11 @@ function draw() {
   push()
   noStroke();
   rect(0, 0, width, height);
-  pop();
 
+  stroke(0);
+  fill(192, 247, 200);
+  rect(520, 15, 350, 125);
+  pop();
 
   var total = 0;
   var choice1 = getCookie('index_page1=');
@@ -36,13 +39,19 @@ function draw() {
   total += parseInt(choice4);
   total += parseInt(choice5);
   total += parseInt(choice6);
-  text(total, 240, 120);
+  text(total, 700, 300);
+
+  // if (total < 9) {
+  //   text("Type A" 700, 400);
+  // } else if (total > 9) {
+  //   text("Type B" 700, 400);
+  // } else if (total == 9) {
+  //   text("Balanced" 700, 400);
+  // }
 
   // Title, instructions, answers, activity space
-textSize(40);
-text("What type of student are you?", 700, 40);
-textSize(20);
-text("Result Page", 700, 180);
+  textSize(80);
+  text("Results:", 700, 75);
 }
 
 //https://www.w3schools.com/js/js_cookies.asp
