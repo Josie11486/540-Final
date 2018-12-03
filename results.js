@@ -1,16 +1,12 @@
 var button;
 var x = 540;
 var y = 300;
-var capture;
-var x = 100;
+
 
 function setup() {
   createCanvas(1400, 700);
   background(255);
   textAlign(CENTER, CENTER);
-  capture = createCapture(VIDEO);
-  capture.size(420, 340);
-  //capture.hide();
 }
 
 
@@ -19,10 +15,7 @@ function draw() {
   noStroke();
   rect(0, 0, width, height);
   pop();
-  
-    background(255);
-  image(capture, 0, 0, 320, 240);
-  filter('INVERT');
+
 
   var total = 0;
   var choice1 = getCookie('index_page1=');
