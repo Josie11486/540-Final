@@ -38,20 +38,6 @@ function draw() {
   image(capture, 0, 0, 320, 240);
   filter('INVERT');
   
-   push() 
-  ellipse(707, 700, 30, 30);
-    ellipse(707, 750, 30, 30);
-
-  textAlign(CENTER, CENTER);
-  textSize(40);
-  text("What type of student are you?", 800, 800);
-  textAlign(LEFT, LEFT);
-  textSize(25);
-  text("3. Question", x, y-100);
-  textSize(20);
-  text("A.  Answer", x, y);
-  text("B.  Answer", x, y+50);
-   pop();
   
   stroke(255);
   y += speed;
