@@ -20,7 +20,7 @@ function setup() {
   button.style('font-size', '20px');
   
   capture = createCapture(VIDEO);
-  capture.size(320, 240);
+  capture.size(420, 340);
   //capture.hide();
 }
 
