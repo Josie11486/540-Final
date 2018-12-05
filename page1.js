@@ -14,7 +14,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1400, 700);
+  createCanvas(1500, 1400);
   background(255);
   textAlign(CENTER, CENTER);
   button = createButton('Next');
