@@ -3,9 +3,14 @@ var choice = '0';
 var x = 300;
 var y = 300;
 var arrow;
+var paper;
+var paper2;
+
 
 function preload() {
   arrow = loadImage('arrow.png');
+  paper = loadImage('paper.jpg')
+  paper2 = loadImage('paper2.jpg')
 }
 
 function setup() {
@@ -26,8 +31,11 @@ noStroke();
 rect(0, 0, width, height);
 pop();
 
-  ellipse(307, 300, 30, 30);
-  ellipse(307, 350, 30, 30);
+ ellipse(307, 300, 30, 30);
+ ellipse(307, 350, 30, 30);
+  
+ image(paper, 0, 0);
+ image(paper2, 1000, 0);
 
 textAlign(CENTER, CENTER);
 textSize(40);
