@@ -73,5 +73,5 @@ function saveCookie() {
   var d = new Date();
   d.setTime(d.getTime() + 60*60*1000);
   var expires = "expires=" + d.toUTCString();
-  document.cookie = "index_page1=" + choice + ";" + expires + ";path=/";
+  document.cookie = "index_page6=" + choice + ";" + expires + ";path=/";
 }
