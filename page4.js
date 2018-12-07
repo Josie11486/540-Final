@@ -68,11 +68,11 @@ function draw(){
   }
 
 
-if(center>250&&center<450) {
+if(center>250 && center<450) {
      choice = '1';
 }
 
-if(center>1&&center<800) {
+if(center>1 && center<800) {
      choice = '2';
 }
 
