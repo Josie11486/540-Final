@@ -56,7 +56,6 @@ text("4. Question?", 300, 298);
 
 }
 
-function draw() {
   background(34,139,34);
   stroke(255);
 
@@ -94,7 +93,7 @@ function draw() {
  if(keyCode == RIGHT_ARROW){
    center = center + 5;
   }
- }
+ 
 
 if(center>250 &&center<450) {
      count += 1;
