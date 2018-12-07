@@ -4,19 +4,26 @@ var arrow;
 var paper;
 var paper2;
 
+var outline;
+
+var count;
+let timer =20
+
 
 function preload() {
-  arrow = loadImage('arrow.png');
+  arrow = loadImage('arrow.png')
   paper = loadImage('paper.jpg')
   paper2 = loadImage('paper2.jpg')
+  outline= loadImage('uoutline.png')
 }
 
 function setup() {
-  createCanvas(1500, 1400);
+  createCanvas(1250, 700);
   background(255);
+  noStroke();
   textAlign(CENTER, CENTER);
   button = createButton('Next');
-  button.position(650, 620);
+  button.position(580, 690);
   button.mousePressed(nextPage);
   button.size(100,50);
   button.style('font-size', '20px');
@@ -26,45 +33,72 @@ function setup() {
 
 
 function draw() {
-push()
-noStroke();
-rect(0, 0, width, height);
-pop();
+//push()
+//noStroke();
+//rect(0, 0, width, height);
+//pop();
 
-image(paper, 0, 0);
-image(paper2, 1000, 0);
+//image(paper, 0, 0);
+//image(paper2, 1000, 0);
 
-push()
-noFill();
-ellipse(363, 372, 40, 40);
-ellipse(363, 442, 40, 40);
-pop();
+
+
+//Delete between these comments when you add your activity
+
+//Delete between these comments when you add your activity
 
 textAlign(CENTER, CENTER);
-textSize(40);
-text("What type of student are you?", 700, 100);
-textAlign(LEFT, LEFT);
-textSize(30);
-text("2. Question?", 300, 298);
-
-//Delete between these comments when you add your activity
-text("A. For your activities, when you create your if-and statement, make sure that", 350, 371);
-text("B. the planner situation has a choice = '1' and procrastinator says choice = '2'", 350, 444);
-
-if(mouseIsPressed) {
-  if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
-    choice = '1';
-    image(arrow, 285, 347);
-
-  } else if(mouseX>=343 && mouseX<=383 && mouseY>=422 && mouseY<=462) {
-      choice = '2';
-      image(arrow, 285, 420);
-  }
+textSize(100);
+text(timer, width/2, height/2);
+if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+timer --;
 }
-//Delete between these comments when you add your activity
+if (timer == 0) {
+  push()
+  noStroke();
+  rect(0, 0, width, height);
+  pop();
+
+  image(paper, 0, 0);
+  image(paper2, 1000, 0);
+text("GAME OVER", width/2, height*0.7);
+//new part check if correct
+if(button.mousePressed(nextPage)&&time<20&&time >0) {
+  count +=1;
+}
+else {
+   count= 0;
+}
+// personality: if, then save it in a cookie
+
+
+} else {
+
+image(outline,0,0, 1250, 700);
+if(mouseX<620){
+fill(255,175,0);
+}
+else {
+  fill(34,139, 34);
+}
+
+ellipse(mouseX, mouseY, 100, 100);
+
 
 
 }
+
+
+
+
+textAlign(CENTER, CENTER);
+textSize(100);
+text(timer, width/2, height/2);
+
+
+}
+
+
 
 function nextPage() {
   saveCookie();
