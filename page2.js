@@ -59,10 +59,10 @@ if (timer == 0) {
 text("GAME OVER", width/2, height*0.7);
 //new part check if correct
 if(button.mousePressed(nextPage)&&time<20&&time >0) {
-  choice=1;
+  choice= '1';
 }
 else {
-   choice = 2;
+   choice = '2';
 }
 // personality: if, then save it in a cookie
 
