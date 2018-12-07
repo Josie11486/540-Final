@@ -11,8 +11,8 @@ var speed = -1;
 
 function preload() {
   arrow = loadImage('arrow.png');
-  paper = loadImage('paper.jpg')
-  paper2 = loadImage('paper2.jpg')
+  paper = loadImage('paper.jpg');
+  paper2 = loadImage('paper2.jpg');
 }
 
 
@@ -22,7 +22,7 @@ function setup() {
   button = createButton('Next');
   button.position(650, 620);
   button.mousePressed(nextPage);
-  button.size(100,50);
+  button.size(100, 50);
   button.style('font-size', '20px');
   button.style("background-color","#ffffff");
   button.style("border", "2px solid black");
@@ -69,11 +69,11 @@ function draw(){
 
 
 if(center>250&&center<450) {
-     choice = 1;
+     choice = '1';
 }
 
 if(center>1&&center<800) {
-     choice = 2;
+     choice = '2';
 }
 
 fill(255, 165, 0);
