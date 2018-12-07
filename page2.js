@@ -7,14 +7,14 @@ var paper2;
 var outline;
 
 var count;
-let timer =20
+let timer = 20;
 
 
 function preload() {
   arrow = loadImage('arrow.png')
   paper = loadImage('paper.jpg')
   paper2 = loadImage('paper2.jpg')
-  outline= loadImage('uoutline.png')
+  outline = loadImage('uoutline.png')
 }
 
 function setup() {
@@ -42,11 +42,6 @@ function draw() {
 //image(paper2, 1000, 0);
 
 
-
-//Delete between these comments when you add your activity
-
-//Delete between these comments when you add your activity
-
 textAlign(CENTER, CENTER);
 textSize(100);
 text(timer, width/2, height/2);
@@ -67,7 +62,7 @@ if(button.mousePressed(nextPage)&&time<20&&time >0) {
   choice=1;
 }
 else {
-   choice=2;
+   choice = 2;
 }
 // personality: if, then save it in a cookie
 
