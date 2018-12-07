@@ -45,7 +45,8 @@ textSize(40);
 text("What type of student are you?", 700, 100);
 textAlign(LEFT, LEFT);
 textSize(30);
-text("3. Your roommate is having a party with loud music, you are working on an important  assignment, what do you do?", 300, 298);
+text("3. Your roommate is having a party with loud music, and you are working", 300, 298);
+text("on an important  assignment, what do you do?", 300, 325);
 text("A.  Take a break and enjoy the music.", 350, 371);
 text("B.  Go outside and get your project done enjoying the scene.", 350, 444);
 
