@@ -1,4 +1,4 @@
-var button;
+ var button;
 var choice = '0';
 var arrow;
 var paper;
@@ -9,18 +9,15 @@ var center = 340;
 var speed = -1;
 //var millisecond = millis();
 
-var count = 0;
-
-
 function preload() {
   arrow = loadImage('arrow.png');
   paper = loadImage('paper.jpg')
   paper2 = loadImage('paper2.jpg')
 }
 
+
 function setup() {
-  createCanvas(1500, 1400);
-  background(255);
+  createCanvas(680, 420);
   textAlign(CENTER, CENTER);
   button = createButton('Next');
   button.position(650, 620);
@@ -31,31 +28,7 @@ function setup() {
   button.style("border", "2px solid black");
 }
 
-
-function draw() {
-push()
-noStroke();
-rect(0, 0, width, height);
-pop();
-
-image(paper, 0, 0);
-image(paper2, 1000, 0);
-
-push()
-noFill();
-ellipse(363, 372, 40, 40);
-ellipse(363, 442, 40, 40);
-pop();
-
-textAlign(CENTER, CENTER);
-textSize(40);
-text("What type of student are you?", 700, 100);
-textAlign(LEFT, LEFT);
-textSize(30);
-text("4. Question?", 300, 298);
-
-}
-
+function draw(){
   background(34,139,34);
   stroke(255);
 
@@ -93,14 +66,14 @@ text("4. Question?", 300, 298);
  if(keyCode == RIGHT_ARROW){
    center = center + 5;
   }
- 
 
-if(center>250 &&center<450) {
-     count += 1;
+
+if(center>250&&center<450) {
+     choice = 1;
 }
 
-if(center>1 &&center<800) {
-     count += 4;
+if(center>1&&center<800) {
+     choice = 2;
 }
 
 fill(255, 165, 0);
@@ -109,6 +82,16 @@ ellipse(center, y, 140, 140);
 }
 }
 
+if (y == 420){
+push()
+noStroke();
+rect(0,0,width, height);
+pop();
+
+image(paper, 0, 0);
+image(paper2,1000, 0);
+text ("GAME OVER"), width/2, height*0, 7);
+}
 
 function nextPage() {
   saveCookie();
@@ -123,3 +106,4 @@ function saveCookie() {
   document.cookie = "index_page4=" + choice + ";" + expires + ";path=/";
 }
 }
+
