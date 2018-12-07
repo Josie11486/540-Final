@@ -47,7 +47,7 @@ textAlign(LEFT, LEFT);
 textSize(30);
 text("3. Your roommate is playing loud music while you work, what do you do?", 300, 298);
 text("A.  Take a break and enjoy the music.", 350, 371);
-text("B.  Go outside and get your project done enjoying the scene.", 350, 444);
+text("B.  Go outside away from the noise and get your project done outdoors.", 350, 444);
 
 if(mouseIsPressed) {
   if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
