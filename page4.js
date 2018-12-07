@@ -110,7 +110,6 @@ ellipse(center, y, 140, 140);
 }
 }
 
-}
 
 function nextPage() {
   saveCookie();
@@ -123,4 +122,5 @@ function saveCookie() {
   d.setTime(d.getTime() + 60*60*1000);
   var expires = "expires=" + d.toUTCString();
   document.cookie = "index_page4=" + choice + ";" + expires + ";path=/";
+}
 }
