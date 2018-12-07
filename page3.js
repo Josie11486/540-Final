@@ -45,9 +45,9 @@ textSize(40);
 text("What type of student are you?", 700, 100);
 textAlign(LEFT, LEFT);
 textSize(30);
-text("3. Question?", 300, 298);
-text("A.  Answer.", 350, 371);
-text("B.  Answer.", 350, 444);
+text("3. Your roommate is having a party with loud music, you are working on an important  assignment, what do you do?", 300, 298);
+text("A.  Take a break and enjoy the music.", 350, 371);
+text("B.  Go outside and get your project done enjoying the scene.", 350, 444);
 
 if(mouseIsPressed) {
   if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
