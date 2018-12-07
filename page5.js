@@ -45,14 +45,14 @@ textSize(40);
 text("What type of student are you?", 700, 100);
 textAlign(LEFT, LEFT);
 textSize(30);
-text("5. Question?", 300, 298);
-text("A.  Answer.", 350, 371);
-text("B.  Answer.", 350, 444);
+text("5.How often do you go to the library and use its services??", 300, 298);
+text("A.  Less than twice a week.", 350, 371);
+text("B.  More than twice a week.", 350, 444);
 
 if(mouseIsPressed) {
   if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
     choice = '1';
-    image(arrow, 285, 347);
+    image(arrow, 285Question, 347);
 
   } else if(mouseX>=343 && mouseX<=383 && mouseY>=422 && mouseY<=462) {
       choice = '2';
