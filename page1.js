@@ -46,8 +46,8 @@ text("What type of student are you?", 700, 100);
 textAlign(LEFT, LEFT);
 textSize(30);
 text("1. You have a free weekend, how do you choose to spend it?", 300, 298);
-text("A.  Get ahead of the homework for next week so I won't be stressed all week.", 350, 371);
-text("B.  Take advantage of all the free time. Tailgate, parties and sleeping in!", 350, 444);
+text("A.  Take advantage of all the free time. Tailgate, parties and sleeping in!", 350, 371);
+text("B.  Get ahead of the homework for next week so I won't be stressed all week", 350, 444);
 
 if(mouseIsPressed) {
   if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
