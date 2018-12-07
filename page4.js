@@ -3,6 +3,13 @@ var choice = '0';
 var arrow;
 var paper;
 var paper2;
+var x = 100;
+var y = 0;
+var center = 340;
+var speed = -1;
+//var millisecond = millis();
+
+var count = 0;
 
 
 function preload() {
@@ -47,21 +54,62 @@ textAlign(LEFT, LEFT);
 textSize(30);
 text("4. Question?", 300, 298);
 
-//Delete between these comments when you add your activity
-text("A. For your activities, when you create your if-and statement, make sure that", 350, 371);
-text("B. the planner situation has a choice = '1' and procrastinator says choice = '2'", 350, 444);
-
-if(mouseIsPressed) {
-  if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
-    choice = '1';
-    image(arrow, 285, 347);
-
-  } else if(mouseX>=343 && mouseX<=383 && mouseY>=422 && mouseY<=462) {
-      choice = '2';
-      image(arrow, 285, 420);
-  }
 }
-//Delete between these comments when you add your activity
+
+function draw() {
+  background(34,139,34);
+  stroke(255);
+
+  textSize(26);
+  textAlign(CENTER);
+  text('Use the left and right arrows to move the', 300, 140);
+  text('circle back and forth as many times', 300, 190)
+  text('as you can before the circle hits the bottom of the screen.', 300, 240);
+  var currentTime = millis();
+
+  if(currentTime > 8000) {
+  y -= speed;
+  ellipse(x,y,x,y+20);
+  ellipse(2*x, y-30, 2*x, y+20-30);
+  ellipse(3*x, y+50, 3*x, y+20+50);
+  ellipse(4*x, y-10, 4*x, y+20-10);
+ x= random(0, width);
+
+/*
+ currentTime = mills();
+ if(currentTime > 2000) {
+ y += speed;
+ if(y > height) {
+   y = 0;
+   x = random(0, width);
+ }
+}
+ */
+
+ if(keyIsPressed) {
+ if(keyCode == LEFT_ARROW) {
+   center = center- 5;
+ }
+
+ if(keyCode == RIGHT_ARROW){
+   center = center + 5;
+  }
+ }
+
+if(center>250 &&center<450) {
+     count += 1;
+}
+
+if(center>1 &&center<800) {
+     count += 4;
+}
+
+fill(255, 165, 0);
+ellipse(center, y, 140, 140);
+
+}
+}
+
 }
 
 function nextPage() {
