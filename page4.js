@@ -15,6 +15,13 @@ function preload() {
   paper2 = loadImage('paper2.jpg');
 }
 
+//https://www.w3schools.com/js/js_cookies.asp
+function saveCookie() {
+  var d = new Date();
+  d.setTime(d.getTime() + 60*60*1000);
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = "index_page4=" + choice + ";" + expires + ";path=/";
+}
 
 function nextPage() {
   saveCookie();
@@ -100,12 +107,5 @@ text ("GAME OVER"), width/2, height*0, 7;
 }
 
 
-//https://www.w3schools.com/js/js_cookies.asp
-function saveCookie() {
-  var d = new Date();
-  d.setTime(d.getTime() + 60*60*1000);
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = "index_page4=" + choice + ";" + expires + ";path=/";
-}
 }
 
