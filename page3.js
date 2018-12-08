@@ -63,7 +63,7 @@ if(mouseIsPressed) {
 
 function nextPage() {
   saveCookie();
-  window.location = 'page5.html';
+  window.location = 'page4.html';
 }
 
 //https://www.w3schools.com/js/js_cookies.asp
