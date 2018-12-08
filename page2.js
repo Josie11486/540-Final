@@ -3,9 +3,7 @@ var choice = '0';
 var arrow;
 var paper;
 var paper2;
-
 var outline;
-
 var count;
 let timer = 20;
 
@@ -18,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1250, 700);
+  createCanvas(1500, 1400);
   background(255);
   noStroke();
   textAlign(CENTER, CENTER);
