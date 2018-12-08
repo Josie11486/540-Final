@@ -21,7 +21,7 @@ function setup() {
   noStroke();
   textAlign(CENTER, CENTER);
   button = createButton('Next');
-  button.position(580, 690);
+  button.position(583, 400);
   button.mousePressed(nextPage);
   button.size(100,50);
   button.style('font-size', '20px');
@@ -31,30 +31,16 @@ function setup() {
 
 
 function draw() {
-//push()
-//noStroke();
-//rect(0, 0, width, height);
-//pop();
-
-//image(paper, 0, 0);
-//image(paper2, 1000, 0);
-
-
 textAlign(CENTER, CENTER);
 textSize(100);
-text(timer, width/2, height/2);
+// text(timer, 700, 30);
 if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
 timer --;
 }
 if (timer == 0) {
-  push()
-  noStroke();
-  rect(0, 0, width, height);
-  pop();
-
-  image(paper, 0, 0);
-  image(paper2, 1000, 0);
-text("GAME OVER", width/2, height*0.7);
+image(paper, 0, 0);
+image(paper2, 1000, 0);
+text("GAME OVER", 650, 203);
 //new part check if correct
 if(button.mousePressed(nextPage)&&time<20&&time >0) {
   choice= '1';
@@ -62,32 +48,32 @@ if(button.mousePressed(nextPage)&&time<20&&time >0) {
 else {
    choice = '2';
 }
-// personality: if, then save it in a cookie
-
 
 } else {
 
 image(outline,0,0, 1250, 700);
-if(mouseX<620){
+
+if(mouseX<630){
 fill(255,175,0);
 }
-else {
+else if(mouseX>630 && mouseX<1230){
   fill(34,139, 34);
 }
 
 ellipse(mouseX, mouseY, 100, 100);
-
-
-
 }
-
-
 
 
 textAlign(CENTER, CENTER);
 textSize(100);
-text(timer, width/2, height/2);
+text(timer, 620, 250);
 
+
+push()
+fill(255);
+rect(1220, 0, 300, 1000);
+rect(0, 700, 1500, 500);
+pop();
 
 }
 
