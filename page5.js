@@ -45,7 +45,7 @@ textSize(40);
 text("What type of student are you?", 700, 100);
 textAlign(LEFT, LEFT);
 textSize(30);
-text("5.How often do you go to the library and use its services??", 300, 298);
+text("5. How often do you go to the library and use its services??", 300, 298);
 text("A.  Less than twice a week.", 350, 371);
 text("B.  More than twice a week.", 350, 444);
 
