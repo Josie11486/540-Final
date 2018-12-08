@@ -16,6 +16,12 @@ function preload() {
 }
 
 
+function nextPage() {
+  saveCookie();
+  window.location = 'page5.html';
+}
+
+
 function setup() {
   createCanvas(680, 420);
   textAlign(CENTER, CENTER);
@@ -93,10 +99,6 @@ image(paper2,1000, 0);
 text ("GAME OVER"), width/2, height*0, 7;
 }
 
-function nextPage() {
-  saveCookie();
-  window.location = 'page5.html';
-}
 
 //https://www.w3schools.com/js/js_cookies.asp
 function saveCookie() {
