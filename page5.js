@@ -52,7 +52,7 @@ text("B.  More than twice a week.", 350, 444);
 if(mouseIsPressed) {
   if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
     choice = '1';
-    image(arrow, 285Question, 347);
+    image(arrow, 285, 347);
 
   } else if(mouseX>=343 && mouseX<=383 && mouseY>=422 && mouseY<=462) {
       choice = '2';
