@@ -4,6 +4,9 @@ var arrow;
 var paper;
 var paper2;
 
+var s;
+var scl = 20;
+var food;
 
 function preload() {
   arrow = loadImage('arrow.png');
@@ -23,9 +26,35 @@ function setup() {
   button.style('font-size', '20px');
   button.style("background-color","#ffffff");
   button.style("border", "2px solid black");
+  
+    createCanvas(600, 600);
+  s = new Snake();
+  frameRate(10);
+  pickLocation();
+}
+
+function pickLocation() {
+  var cols = floor(width/scl);
+  var rows = floor(height/scl);
+  food = createVector(floor(random(cols)), floor(random(rows)));
+  food.mult(scl);
 }
 
 function draw() {
+  
+background(51);
+
+  if (s.eat(food)) {
+    pickLocation();
+  }
+  s.death();
+  s.update();
+  s.show();
+
+
+  fill(255, 0, 100);
+  ellipse(food.x, food.y, scl, scl);
+  
 push()
 noStroke();
 rect(0, 0, width, height);
@@ -33,34 +62,87 @@ pop();
 
 image(paper, 0, 0);
 image(paper2, 1000, 0);
+  
 
-push()
-noFill();
-ellipse(363, 372, 40, 40);
-ellipse(363, 442, 40, 40);
-pop();
-
-textAlign(CENTER, CENTER);
-textSize(40);
-text("What type of student are you?", 700, 60);
-textAlign(LEFT, LEFT);
-textSize(30);
-image(desk, 530,90, 300, 200);
-text("5. What does your desk look like?", 300, 315);
-text("A. Right, I never have time to clean up. ", 350, 371);
-text("B. Left, If my desk isn't organized I cannot concentrate. ", 350, 444);
-
-if(mouseIsPressed) {
-  if(mouseX>=343 && mouseX<=383 && mouseY>=352 && mouseY<=392) {
-    choice = '1';
-    image(arrow, 285, 347);
-
-  } else if(mouseX>=343 && mouseX<=383 && mouseY>=422 && mouseY<=462) {
-      choice = '2';
-      image(arrow, 285, 420);
+// dir is the function direction
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+    s.dir(0, -1);
+  } else if (keyCode === DOWN_ARROW) {
+    s.dir(0, 1);
+  } else if (keyCode === RIGHT_ARROW) {
+    s.dir(1, 0);
+  } else if (keyCode === LEFT_ARROW) {
+    s.dir(-1, 0);
   }
 }
+
+
+function Snake() {
+  this.x = 0;
+  this.y = 0;
+  this.xspeed = 2;
+  this.yspeed = 0;
+  this.total = 0;
+  this.tail = [];
+
+  this.eat = function(pos) {
+    var d = dist(this.x, this.y, pos.x, pos.y);
+    if (d < 1) {
+      this.total++;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+// directions
+  this.dir = function(x, y) {
+    this.xspeed = x;
+    this.yspeed = y;
+  }
+
+// if the snake dies - start over
+  this.death = function() {
+    for (var i = 0; i < this.tail.length; i++) {
+      var pos = this.tail[i];
+      var d = dist(this.x, this.y, pos.x, pos.y);
+      if (d < 1) {
+        console.log('starting over');
+        this.total = 0;
+        this.tail = [];
+      }
+    }
+  }
+
+// Movement
+  this.update = function() {
+    for (var i = 0; i < this.tail.length - 1; i++) {
+      this.tail[i] = this.tail[i + 1];
+    } // shift the tail everything down
+    if (this.total >= 1) {
+      this.tail[this.total - 1] = createVector(this.x, this.y);
+    } // -1 = the new location
+
+    this.x = this.x + this.xspeed * scl;
+    this.y = this.y + this.yspeed * scl;
+
+    this.x = constrain(this.x, 0, width - scl);
+    this.y = constrain(this.y, 0, height - scl);
+  }
+
+// for every food ate +1 on the tail
+  this.show = function() {
+    fill(255);
+    for (var i = 0; i < this.tail.length; i++) {
+      ellipse(this.tail[i].x, this.tail[i].y, scl, scl);
+    }
+    ellipse(this.x, this.y, scl, scl);
+
+  }
 }
+
+
 
 
 function nextPage() {
