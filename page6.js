@@ -46,7 +46,7 @@ text("What type of student are you?", 700, 60);
 textAlign(LEFT, LEFT);
 textSize(30);
 image(desk, 530,90, 300, 200);
-text("5. What does your desk look like?", 300, 315);
+text("6. What does your desk look like?", 300, 315);
 text("A. Right, I never have time to clean up. ", 350, 371);
 text("B. Left, If my desk isn't organized I cannot concentrate. ", 350, 444);
 
