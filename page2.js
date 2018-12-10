@@ -51,7 +51,7 @@ else {
 
 } else {
 
-image(outline,0,0, 1250, 700);
+image(Uoutline,0,0, 1250, 700);
 
 if(mouseX<630){
 fill(255,175,0);
