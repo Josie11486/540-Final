@@ -3,7 +3,7 @@ var choice = '0';
 var arrow;
 var paper;
 var paper2;
-var Uoutline;
+var outline;
 var count;
 let timer = 20;
 
@@ -12,7 +12,7 @@ function preload() {
   arrow = loadImage('arrow.png')
   paper = loadImage('paper.jpg')
   paper2 = loadImage('paper2.jpg')
-  Uoutline = loadImage('Uoutline.png')
+  outline = loadImage('uoutline.png')
 }
 
 function setup() {
@@ -51,7 +51,7 @@ else {
 
 } else {
 
-image(Uoutline,0,0, 1250, 700);
+image(outline,0,0, 1250, 700);
 
 if(mouseX<630){
 fill(255,175,0);
