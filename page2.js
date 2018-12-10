@@ -12,7 +12,7 @@ function preload() {
   arrow = loadImage('arrow.png')
   paper = loadImage('paper.jpg')
   paper2 = loadImage('paper2.jpg')
-  outline = loadImage('uoutline.png')
+  outline = loadImage('Uoutline.png')
 }
 
 function setup() {
